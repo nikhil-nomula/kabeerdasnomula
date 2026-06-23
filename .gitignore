@@ -1,0 +1,10 @@
+# Original source photos — optimized copies live in assets/img/.
+# Kept out of the repo so they aren't served at the deployed site root.
+WhatsApp Image*.jpeg
+20260126_105626.jpg
+20260327_191520.jpg
+d1df83dd-*.jpeg
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
