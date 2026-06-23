@@ -266,24 +266,3 @@ h1, h2, h3, .stat-num, .hero-float-num { font-family: var(--head); letter-spacin
   .hero-cta .btn { flex: 1; }
   .hero-float-card { inset-inline-start: 12px; }
 }
-
-/* ============================================================
-   Urdu (اردو) — Nastaliq font + right-to-left tweaks
-   ============================================================ */
-html[lang="ur"] body { font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", system-ui, sans-serif; line-height: 2.05; }
-html[lang="ur"] h1, html[lang="ur"] h2, html[lang="ur"] h3,
-html[lang="ur"] .btn, html[lang="ur"] .brand-name, html[lang="ur"] .stat-num,
-html[lang="ur"] .hero-float-num, html[lang="ur"] .footer-name,
-html[lang="ur"] .lang-switch button, html[lang="ur"] .feature-tag, html[lang="ur"] .eyebrow,
-html[lang="ur"] .section-eyebrow {
-  font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", serif; letter-spacing: 0;
-}
-/* Nastaliq glyphs are tall — give headings & buttons breathing room */
-html[lang="ur"] .hero-text h1 { line-height: 1.6; }
-html[lang="ur"] .section-title, html[lang="ur"] .feature-text h3, html[lang="ur"] .hero-tagline { line-height: 1.7; }
-html[lang="ur"] .btn { padding-top: 11px; padding-bottom: 11px; }
-html[lang="ur"] .nav-links a { line-height: 1.4; }
-
-/* Mirror the few decorative bits that don't auto-flip */
-[dir="rtl"] .card::before { transform-origin: right; }
-[dir="rtl"] .stat:not(:last-child)::after { right: auto; left: -10px; }

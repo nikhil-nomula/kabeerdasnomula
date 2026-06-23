@@ -34,7 +34,7 @@ Hyderabad, Telangana - 500035.
 
 ## Languages
 
-The website is available in English, Telugu (తెలుగు), Hindi (हिन्दी) and Urdu (اردو).
+The website is available in English, Telugu (తెలుగు) and Hindi (हिन्दी).
 
 ## Contact
 

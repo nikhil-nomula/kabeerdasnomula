@@ -1,9 +1,8 @@
 # Nomula Kabeer Das, Campaign Website
 
-A fast, multilingual (English / తెలుగు / हिन्दी / اردو) static website for the
-ward councillor campaign of **Nomula Kabeer Das**. No build step, no framework,
+A fast, multilingual (English / తెలుగు / हिन्दी) static website for the ward
+councillor campaign of **Nomula Kabeer Das**. No build step, no framework,
 just HTML, CSS, and a little JavaScript, ready to host on **Cloudflare Pages**.
-Urdu renders right-to-left automatically.
 
 ## What's here
 
@@ -11,7 +10,7 @@ Urdu renders right-to-left automatically.
 |------|---------|
 | `index.html` | The full single-page site (all sections + SEO/social tags) |
 | `styles.css` | Styling and responsive layout |
-| `i18n.js` | All text in EN / TE / HI / UR, **edit copy here** |
+| `i18n.js` | All text in EN / TE / HI, **edit copy here** |
 | `script.js` | Language switcher, scroll animations, mobile menu |
 | `_headers` | Cloudflare Pages caching & security headers |
 | `robots.txt` | Crawl rules, welcomes Google **and** AI/LLM crawlers |
@@ -71,10 +70,9 @@ grep -rl "www.nomulakabeerdas.in" . --include="*.html" --include="*.txt" --inclu
 ## Before you go live, checklist
 
 - [ ] **Set the real domain** (see the step above), needed for SEO & social previews.
-- [ ] **Review translations.** The Telugu, Hindi and Urdu text in `i18n.js` is a
+- [ ] **Review translations.** The Telugu and Hindi text in `i18n.js` is a
       first draft. Have a native speaker check it (especially names, the colony
-      name, and party names). For Urdu, a reviewer may prefer the Arabic comma
-      (،) over the Latin comma in a few places.
+      name, and party names).
 - [x] **Contact details**, phone `+91 94902 86474` and email `kdashyd@gmail.com`
       are set. Address: Doctors Colony, Saroor Nagar, Hyderabad - 500035.
 - [ ] **Add social links.** Replace the `href="#"` in the `.social` block of
@@ -140,7 +138,7 @@ Google AI).
 
 ## Editing content
 
-- **Text:** open `i18n.js`. Each phrase has an `en`, `te`, `hi`, and `ur` version
+- **Text:** open `i18n.js`. Each phrase has an `en`, `te`, and `hi` version
   under the same key. Change the value, keep the key.
 - **Photos:** drop new images into `assets/img/` and update the `<img src="…">`
   paths in `index.html`.
