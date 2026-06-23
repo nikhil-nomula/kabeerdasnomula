@@ -1,4 +1,4 @@
-# Nomula Kabeer Das — campaign site
+# Nomula Kabeer Das, campaign site
 # Everyone is welcome to crawl, including AI/LLM crawlers.
 
 User-agent: *

@@ -2,7 +2,8 @@
 (function () {
   "use strict";
 
-  var SUPPORTED = ["en", "te", "hi"];
+  var SUPPORTED = ["en", "te", "hi", "ur"];
+  var RTL = ["ur"];
   var STORAGE_KEY = "kd-lang";
 
   function applyLang(lang) {
@@ -22,8 +23,9 @@
       }
     });
 
-    // Update <html lang> and active button.
+    // Update <html lang>, text direction (RTL for Urdu), and active button.
     document.documentElement.setAttribute("lang", lang);
+    document.documentElement.setAttribute("dir", RTL.indexOf(lang) !== -1 ? "rtl" : "ltr");
     document.querySelectorAll(".lang-switch button").forEach(function (btn) {
       btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
     });

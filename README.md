@@ -1,8 +1,9 @@
-# Nomula Kabeer Das — Campaign Website
+# Nomula Kabeer Das, Campaign Website
 
-A fast, multilingual (English / తెలుగు / हिन्दी) static website for the ward
-councillor campaign of **Nomula Kabeer Das**. No build step, no framework —
+A fast, multilingual (English / తెలుగు / हिन्दी / اردو) static website for the
+ward councillor campaign of **Nomula Kabeer Das**. No build step, no framework,
 just HTML, CSS, and a little JavaScript, ready to host on **Cloudflare Pages**.
+Urdu renders right-to-left automatically.
 
 ## What's here
 
@@ -10,10 +11,10 @@ just HTML, CSS, and a little JavaScript, ready to host on **Cloudflare Pages**.
 |------|---------|
 | `index.html` | The full single-page site (all sections + SEO/social tags) |
 | `styles.css` | Styling and responsive layout |
-| `i18n.js` | All text in EN / TE / HI — **edit copy here** |
+| `i18n.js` | All text in EN / TE / HI / UR, **edit copy here** |
 | `script.js` | Language switcher, scroll animations, mobile menu |
 | `_headers` | Cloudflare Pages caching & security headers |
-| `robots.txt` | Crawl rules — welcomes Google **and** AI/LLM crawlers |
+| `robots.txt` | Crawl rules, welcomes Google **and** AI/LLM crawlers |
 | `sitemap.xml` | Sitemap for search engines |
 | `llms.txt` | Plain-text summary for LLMs (AI answer engines) |
 | `assets/img/` | Photos used on the site (incl. `og-image.jpg` for social) |
@@ -30,7 +31,7 @@ python3 -m http.server 8000
 
 ## Deploy to Cloudflare Pages
 
-### Option A — Connect your Git repo (recommended)
+### Option A, Connect your Git repo (recommended)
 1. Push this folder to a GitHub/GitLab repo.
 2. In the Cloudflare dashboard → **Workers & Pages → Create → Pages → Connect to Git**.
 3. Pick the repo. For build settings:
@@ -39,7 +40,7 @@ python3 -m http.server 8000
    - **Build output directory:** `/`
 4. **Save and Deploy.** Every push to the main branch redeploys automatically.
 
-### Option B — Direct upload via Wrangler CLI
+### Option B, Direct upload via Wrangler CLI
 ```bash
 npm install -g wrangler
 wrangler login
@@ -67,19 +68,20 @@ grep -rl "www.nomulakabeerdas.in" . --include="*.html" --include="*.txt" --inclu
   | xargs sed -i '' 's#https://www.nomulakabeerdas.in#https://YOUR-REAL-DOMAIN#g'
 ```
 
-## Before you go live — checklist
+## Before you go live, checklist
 
-- [ ] **Set the real domain** (see the step above) — needed for SEO & social previews.
-- [ ] **Review translations.** The Telugu and Hindi text in `i18n.js` is a
+- [ ] **Set the real domain** (see the step above), needed for SEO & social previews.
+- [ ] **Review translations.** The Telugu, Hindi and Urdu text in `i18n.js` is a
       first draft. Have a native speaker check it (especially names, the colony
-      name, and party names).
-- [x] **Contact details** — phone `+91 94902 86474` and email `kdashyd@gmail.com`
-      are set. Address: Doctors Colony, Saroor Nagar, Hyderabad — 500035.
+      name, and party names). For Urdu, a reviewer may prefer the Arabic comma
+      (،) over the Latin comma in a few places.
+- [x] **Contact details**, phone `+91 94902 86474` and email `kdashyd@gmail.com`
+      are set. Address: Doctors Colony, Saroor Nagar, Hyderabad - 500035.
 - [ ] **Add social links.** Replace the `href="#"` in the `.social` block of
       `index.html` with real WhatsApp / Facebook / Instagram / YouTube URLs, and
       add those same URLs to the `"sameAs": []` array in the JSON-LD (helps Google
       and AI connect the site to the social profiles).
-- [ ] **Confirm the office sought** — the copy says "Ward Councillor". Update
+- [ ] **Confirm the office sought**, the copy says "Ward Councillor". Update
       if the correct term is Corporator/Councillor/etc. for your municipality.
 - [ ] **Confirm the "35+ years" stat** and any other numbers are accurate.
 - [ ] **Wire up the contact form.** It's a demo right now. Easiest options:
@@ -99,7 +101,7 @@ Google AI).
 - Local-SEO title, description, and keywords (English + Telugu + Hindi) targeting
   Saroor Nagar, LB Nagar, Doctors Colony and Jinkala Bavi Colony.
 - Geo meta tags (`geo.region`, `geo.position`) pointing at Saroor Nagar.
-- **Structured data (JSON-LD)** — a `Person`, campaign `Organization` (with
+- **Structured data (JSON-LD)**, a `Person`, campaign `Organization` (with
   `areaServed` = Saroor Nagar, LB Nagar, etc.), and `WebSite`. This is what Google
   and LLMs read to understand who he is and where he serves.
 - **Open Graph + Twitter cards** with `og-image.jpg`, so links shared on Facebook,
@@ -110,24 +112,24 @@ Google AI).
   read the full English content without running scripts.
 
 **Do this after launch to actually rank & get crawled:**
-1. **Google Search Console** — add the domain, verify, and *Submit sitemap*
+1. **Google Search Console**, add the domain, verify, and *Submit sitemap*
    (`/sitemap.xml`). Same with **Bing Webmaster Tools**.
-2. **Google Business Profile** — create one for the campaign office at Doctors
+2. **Google Business Profile**, create one for the campaign office at Doctors
    Colony, Saroor Nagar. This is the single biggest lever for local "near me"
    search and Google Maps visibility.
 3. **Custom OG image (recommended):** the current `assets/img/og-image.jpg` is a
    reused photo. For best results make a **1200×630px** branded image (name +
    photo + "Saroor Nagar · LB Nagar") and replace that file.
-4. **Get inbound links** from local news, party pages, and directories — local
+4. **Get inbound links** from local news, party pages, and directories, local
    backlinks are what move ranking the most.
 
 **Social platforms (Facebook / Instagram / Snapchat):**
-- These apps are **walled gardens** — Google can't crawl most of their content, and
+- These apps are **walled gardens**, Google can't crawl most of their content, and
   a website alone won't make you show up *inside* them. You need actual profiles:
-  - **Facebook Page** — "Nomula Kabeer Das" (category: Politician). Link the website.
+  - **Facebook Page**, "Nomula Kabeer Das" (category: Politician). Link the website.
     Facebook reads the Open Graph tags, so shared links look good automatically.
-  - **Instagram** — a Professional/Creator account; put the website in the bio link.
-  - **Snapchat** — a Public Profile; optionally a geofilter for Saroor Nagar events.
+  - **Instagram**, a Professional/Creator account; put the website in the bio link.
+  - **Snapchat**, a Public Profile; optionally a geofilter for Saroor Nagar events.
 - Use the **same name, photo, phone and locality** everywhere (consistency helps
   both people and search engines connect the profiles).
 - Once the profiles exist, paste their URLs into the `.social` links **and** the
@@ -138,7 +140,7 @@ Google AI).
 
 ## Editing content
 
-- **Text:** open `i18n.js`. Each phrase has an `en`, `te`, and `hi` version
+- **Text:** open `i18n.js`. Each phrase has an `en`, `te`, `hi`, and `ur` version
   under the same key. Change the value, keep the key.
 - **Photos:** drop new images into `assets/img/` and update the `<img src="…">`
   paths in `index.html`.

@@ -81,9 +81,10 @@ h1, h2, h3, .stat-num, .hero-float-num { font-family: var(--head); letter-spacin
 .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; font-family: var(--head); font-weight: 800; }
 .brand-mark { font-size: 1.45rem; }
 .brand-name { font-size: 1.1rem; color: var(--ink); white-space: nowrap; }
-.nav-links { display: flex; gap: 26px; margin-left: auto; }
+.nav-collapse { display: contents; }
+.nav-links { display: flex; gap: 26px; margin-inline-start: auto; }
 .nav-links a { text-decoration: none; color: var(--ink-soft); font-weight: 600; font-size: 0.95rem; position: relative; }
-.nav-links a::after { content: ""; position: absolute; left: 0; bottom: -5px; width: 0; height: 2px; background: var(--grad); border-radius: 2px; transition: width 0.22s ease; }
+.nav-links a::after { content: ""; position: absolute; inset-inline-start: 0; bottom: -5px; width: 0; height: 2px; background: var(--grad); border-radius: 2px; transition: width 0.22s ease; }
 .nav-links a:hover { color: var(--saffron); }
 .nav-links a:hover::after { width: 100%; }
 
@@ -122,7 +123,7 @@ h1, h2, h3, .stat-num, .hero-float-num { font-family: var(--head); letter-spacin
 .hero-photo-frame::before { content: ""; position: absolute; inset: -2px; border-radius: calc(var(--radius-lg) + 2px); background: var(--grad); z-index: -1; opacity: 0.35; }
 .hero-photo-frame img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top center; border-radius: calc(var(--radius-lg) - 8px); }
 .hero-float-card {
-  position: absolute; left: -22px; bottom: 28px; background: #fff; border: 1px solid var(--line);
+  position: absolute; inset-inline-start: -22px; bottom: 28px; background: #fff; border: 1px solid var(--line);
   border-radius: 16px; padding: 14px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column;
 }
 .hero-float-num { font-family: var(--head); font-weight: 800; font-size: 1.6rem; line-height: 1;
@@ -143,8 +144,8 @@ h1, h2, h3, .stat-num, .hero-float-num { font-family: var(--head); letter-spacin
 .section { padding: 84px 0; }
 .section-alt { background: var(--bg-alt); }
 .section-eyebrow { display: inline-block; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; font-size: 0.78rem;
-  color: var(--saffron); margin-bottom: 10px; padding-left: 30px; position: relative; }
-.section-eyebrow::before { content: ""; position: absolute; left: 0; top: 50%; width: 22px; height: 2px; background: var(--grad); transform: translateY(-50%); }
+  color: var(--saffron); margin-bottom: 10px; padding-inline-start: 30px; position: relative; }
+.section-eyebrow::before { content: ""; position: absolute; inset-inline-start: 0; top: 50%; width: 22px; height: 2px; background: var(--grad); transform: translateY(-50%); }
 .section-title { font-size: clamp(1.7rem, 3.8vw, 2.5rem); color: var(--ink); margin-bottom: 40px; line-height: 1.18; font-weight: 800; }
 
 /* ---------- About ---------- */
@@ -154,9 +155,9 @@ h1, h2, h3, .stat-num, .hero-float-num { font-family: var(--head); letter-spacin
 .about-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--grad); }
 .about-card h3 { margin-bottom: 16px; color: var(--ink); font-size: 1.2rem; }
 .about-card ul { list-style: none; }
-.about-card li { padding: 11px 0 11px 30px; position: relative; border-bottom: 1px solid var(--line); color: var(--ink-soft); }
+.about-card li { padding: 11px 0; padding-inline-start: 30px; position: relative; border-bottom: 1px solid var(--line); color: var(--ink-soft); }
 .about-card li:last-child { border-bottom: none; }
-.about-card li::before { content: "✓"; position: absolute; left: 0; top: 11px; color: #fff; background: var(--green); width: 19px; height: 19px; border-radius: 50%; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+.about-card li::before { content: "✓"; position: absolute; inset-inline-start: 0; top: 11px; color: #fff; background: var(--green); width: 19px; height: 19px; border-radius: 50%; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; font-weight: 800; }
 
 /* ---------- Cards (Work) ---------- */
 .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
@@ -189,10 +190,10 @@ h1, h2, h3, .stat-num, .hero-float-num { font-family: var(--head); letter-spacin
 /* ---------- Vision ---------- */
 .vision-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
 .vision-item { padding: 26px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); position: relative; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.vision-item::before { content: ""; position: absolute; left: 0; top: 22px; bottom: 22px; width: 4px; border-radius: 4px; background: var(--grad); }
+.vision-item::before { content: ""; position: absolute; inset-inline-start: 0; top: 22px; bottom: 22px; width: 4px; border-radius: 4px; background: var(--grad); }
 .vision-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-.vision-item h3 { color: var(--ink); margin-bottom: 8px; padding-left: 14px; font-size: 1.16rem; }
-.vision-item p { color: var(--ink-soft); padding-left: 14px; }
+.vision-item h3 { color: var(--ink); margin-bottom: 8px; padding-inline-start: 14px; font-size: 1.16rem; }
+.vision-item p { color: var(--ink-soft); padding-inline-start: 14px; }
 
 /* ---------- Gallery ---------- */
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -233,17 +234,21 @@ h1, h2, h3, .stat-num, .hero-float-num { font-family: var(--head); letter-spacin
 
 /* ---------- Responsive ---------- */
 @media (max-width: 880px) {
-  .nav-links {
-    position: absolute; top: 70px; left: 0; right: 0; flex-direction: column; gap: 0;
-    background: rgba(255,255,255,0.98); backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--line); padding: 8px 22px; display: none;
+  /* Bar shows only brand + hamburger; links and languages live in the dropdown. */
+  .nav-toggle { display: flex; margin-inline-start: auto; }
+  .nav-collapse {
+    display: none;
+    position: absolute; top: 70px; inset-inline: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line); padding: 8px 22px 18px; box-shadow: var(--shadow);
   }
-  .site-header.nav-open .nav-links { display: flex; }
-  .nav-links a { padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .site-header.nav-open .nav-collapse { display: flex; }
+  .nav-links { flex-direction: column; gap: 0; margin-inline-start: 0; }
+  .nav-links a { padding: 14px 2px; border-bottom: 1px solid var(--line); }
   .nav-links a::after { display: none; }
-  .nav-toggle { display: flex; margin-left: auto; order: 3; }
-  .lang-switch { order: 2; margin-left: auto; }
-  .brand-name { font-size: 1rem; }
+  .lang-switch { align-self: flex-start; margin-top: 14px; flex-wrap: wrap; }
+  .brand-name { font-size: 1.02rem; }
 
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-photo { order: -1; max-width: 380px; margin: 0 auto; }
@@ -259,5 +264,26 @@ h1, h2, h3, .stat-num, .hero-float-num { font-family: var(--head); letter-spacin
   .stat:not(:last-child)::after { display: none; }
   .gallery-grid { grid-template-columns: 1fr; }
   .hero-cta .btn { flex: 1; }
-  .hero-float-card { left: 12px; }
+  .hero-float-card { inset-inline-start: 12px; }
 }
+
+/* ============================================================
+   Urdu (اردو) — Nastaliq font + right-to-left tweaks
+   ============================================================ */
+html[lang="ur"] body { font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", system-ui, sans-serif; line-height: 2.05; }
+html[lang="ur"] h1, html[lang="ur"] h2, html[lang="ur"] h3,
+html[lang="ur"] .btn, html[lang="ur"] .brand-name, html[lang="ur"] .stat-num,
+html[lang="ur"] .hero-float-num, html[lang="ur"] .footer-name,
+html[lang="ur"] .lang-switch button, html[lang="ur"] .feature-tag, html[lang="ur"] .eyebrow,
+html[lang="ur"] .section-eyebrow {
+  font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", serif; letter-spacing: 0;
+}
+/* Nastaliq glyphs are tall — give headings & buttons breathing room */
+html[lang="ur"] .hero-text h1 { line-height: 1.6; }
+html[lang="ur"] .section-title, html[lang="ur"] .feature-text h3, html[lang="ur"] .hero-tagline { line-height: 1.7; }
+html[lang="ur"] .btn { padding-top: 11px; padding-bottom: 11px; }
+html[lang="ur"] .nav-links a { line-height: 1.4; }
+
+/* Mirror the few decorative bits that don't auto-flip */
+[dir="rtl"] .card::before { transform-origin: right; }
+[dir="rtl"] .stat:not(:last-child)::after { right: auto; left: -10px; }
